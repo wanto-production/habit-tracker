@@ -1,0 +1,221 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+  CATPPUCCIN MOCHA PALETTE
+  Official: https://github.com/catppuccin/catppuccin
+  We use:
+    - Primary: lavender (#b4befe in dark, #7287fd in light)
+    - Secondary: blue (#89b4fa in dark, #1e66f5 in light)
+*/
+
+:root {
+  /* === CATPPUCCIN MOCHA — LIGHT VARIANT (for light mode) === */
+  --color-ctp-rosewater: #dc8a78;
+  --color-ctp-flamingo: #dd7878;
+  --color-ctp-pink: #ea76cb;
+  --color-ctp-mauve: #8839ef;
+  --color-ctp-red: #d20f39;
+  --color-ctp-maroon: #e64553;
+  --color-ctp-peach: #fe640b;
+  --color-ctp-yellow: #df8e1d;
+  --color-ctp-green: #40a02b;
+  --color-ctp-teal: #179299;
+  --color-ctp-sky: #04a5e5;
+  --color-ctp-sapphire: #209fb5;
+  --color-ctp-blue: #1e66f5;
+  --color-ctp-lavender: #7287fd;
+  --color-ctp-text: #4c4f69;
+  --color-ctp-subtext1: #5c5f77;
+  --color-ctp-subtext0: #6c6f85;
+  --color-ctp-overlay2: #7c7f93;
+  --color-ctp-overlay1: #8c8fa1;
+  --color-ctp-overlay0: #9ca0b0;
+  --color-ctp-surface2: #acb0be;
+  --color-ctp-surface1: #bcc0cc;
+  --color-ctp-surface0: #ccd0da;
+  --color-ctp-base: #eff1f5;
+  --color-ctp-mantle: #dce0e8;
+  --color-ctp-crust: #d2d6db;
+
+  /* === Semantic Colors (Light Mode) === */
+  --background: var(--color-ctp-mantle);
+  --foreground: var(--color-ctp-text);
+  --card: var(--color-ctp-base);
+  --card-foreground: var(--color-ctp-text);
+  --popover: var(--color-ctp-base);
+  --popover-foreground: var(--color-ctp-text);
+  --primary: var(--color-ctp-lavender);
+  /* lavender as primary */
+  --primary-foreground: var(--color-ctp-base);
+  --secondary: var(--color-ctp-blue);
+  /* blue as secondary */
+  --secondary-foreground: var(--color-ctp-base);
+  --muted: var(--color-ctp-surface0);
+  --muted-foreground: var(--color-ctp-overlay0);
+  --accent: var(--color-ctp-surface0);
+  --accent-foreground: var(--color-ctp-text);
+  --destructive: var(--color-ctp-red);
+  --border: var(--color-ctp-surface1);
+  --input: var(--color-ctp-surface1);
+  --ring: var(--color-ctp-lavender);
+  --chart-1: var(--color-ctp-blue);
+  --chart-2: var(--color-ctp-lavender);
+  --chart-3: var(--color-ctp-green);
+  --chart-4: var(--color-ctp-peach);
+  --chart-5: var(--color-ctp-mauve);
+  --sidebar: var(--color-ctp-base);
+  --sidebar-foreground: var(--color-ctp-text);
+  --sidebar-primary: var(--color-ctp-lavender);
+  --sidebar-primary-foreground: var(--color-ctp-base);
+  --sidebar-accent: var(--color-ctp-surface0);
+  --sidebar-accent-foreground: var(--color-ctp-text);
+  --sidebar-border: var(--color-ctp-surface1);
+  --sidebar-ring: var(--color-ctp-lavender);
+}
+
+.dark {
+  /* === CATPPUCCIN MOCHA — OFFICIAL DARK === */
+  --color-ctp-rosewater: #f5e0dc;
+  --color-ctp-flamingo: #f2cdcd;
+  --color-ctp-pink: #f5c2e7;
+  --color-ctp-mauve: #cba6f7;
+  --color-ctp-red: #f38ba8;
+  --color-ctp-maroon: #eba0ac;
+  --color-ctp-peach: #fab387;
+  --color-ctp-yellow: #f9e2af;
+  --color-ctp-green: #a6e3a1;
+  --color-ctp-teal: #94e2d5;
+  --color-ctp-sky: #89dceb;
+  --color-ctp-sapphire: #74c7ec;
+  --color-ctp-blue: #89b4fa;
+  --color-ctp-lavender: #b4befe;
+  --color-ctp-text: #cdd6f4;
+  --color-ctp-subtext1: #bac2de;
+  --color-ctp-subtext0: #a6adc8;
+  --color-ctp-overlay2: #9399b2;
+  --color-ctp-overlay1: #7f849c;
+  --color-ctp-overlay0: #6c7086;
+  --color-ctp-surface2: #585b70;
+  --color-ctp-surface1: #45475a;
+  --color-ctp-surface0: #313244;
+  --color-ctp-base: #1e1e2e;
+  --color-ctp-mantle: #181825;
+  --color-ctp-crust: #11111b;
+
+  /* === Semantic Colors (Dark Mode) === */
+  --background: var(--color-ctp-mantle);
+  --foreground: var(--color-ctp-text);
+  --card: var(--color-ctp-base);
+  --card-foreground: var(--color-ctp-text);
+  --popover: var(--color-ctp-base);
+  --popover-foreground: var(--color-ctp-text);
+  --primary: var(--color-ctp-lavender);
+  /* lavender */
+  --primary-foreground: var(--color-ctp-crust);
+  --secondary: var(--color-ctp-blue);
+  /* blue */
+  --secondary-foreground: var(--color-ctp-crust);
+  --muted: var(--color-ctp-surface0);
+  --muted-foreground: var(--color-ctp-subtext0);
+  --accent: var(--color-ctp-surface0);
+  --accent-foreground: var(--color-ctp-text);
+  --destructive: var(--color-ctp-red);
+  --border: var(--color-ctp-surface1);
+  --input: var(--color-ctp-surface1);
+  --ring: var(--color-ctp-lavender);
+  --chart-1: var(--color-ctp-blue);
+  --chart-2: var(--color-ctp-lavender);
+  --chart-3: var(--color-ctp-green);
+  --chart-4: var(--color-ctp-peach);
+  --chart-5: var(--color-ctp-mauve);
+  --sidebar: var(--color-ctp-base);
+  --sidebar-foreground: var(--color-ctp-text);
+  --sidebar-primary: var(--color-ctp-lavender);
+  --sidebar-primary-foreground: var(--color-ctp-crust);
+  --sidebar-accent: var(--color-ctp-surface0);
+  --sidebar-accent-foreground: var(--color-ctp-text);
+  --sidebar-border: var(--color-ctp-surface1);
+  --sidebar-ring: var(--color-ctp-lavender);
+}
+
+@theme inline {
+  --radius: 0.625rem;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* === Catppuccin Base Colors (for direct use: bg-ctp-lavender) === */
+  --color-ctp-rosewater: var(--color-ctp-rosewater);
+  --color-ctp-flamingo: var(--color-ctp-flamingo);
+  --color-ctp-pink: var(--color-ctp-pink);
+  --color-ctp-mauve: var(--color-ctp-mauve);
+  --color-ctp-red: var(--color-ctp-red);
+  --color-ctp-maroon: var(--color-ctp-maroon);
+  --color-ctp-peach: var(--color-ctp-peach);
+  --color-ctp-yellow: var(--color-ctp-yellow);
+  --color-ctp-green: var(--color-ctp-green);
+  --color-ctp-teal: var(--color-ctp-teal);
+  --color-ctp-sky: var(--color-ctp-sky);
+  --color-ctp-sapphire: var(--color-ctp-sapphire);
+  --color-ctp-blue: var(--color-ctp-blue);
+  --color-ctp-lavender: var(--color-ctp-lavender);
+  --color-ctp-text: var(--color-ctp-text);
+  --color-ctp-subtext1: var(--color-ctp-subtext1);
+  --color-ctp-subtext0: var(--color-ctp-subtext0);
+  --color-ctp-overlay2: var(--color-ctp-overlay2);
+  --color-ctp-overlay1: var(--color-ctp-overlay1);
+  --color-ctp-overlay0: var(--color-ctp-overlay0);
+  --color-ctp-surface2: var(--color-ctp-surface2);
+  --color-ctp-surface1: var(--color-ctp-surface1);
+  --color-ctp-surface0: var(--color-ctp-surface0);
+  --color-ctp-base: var(--color-ctp-base);
+  --color-ctp-mantle: var(--color-ctp-mantle);
+  --color-ctp-crust: var(--color-ctp-crust);
+
+  /* === Semantic Tokens === */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
