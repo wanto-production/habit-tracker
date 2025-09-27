@@ -1,10 +1,12 @@
 <script lang="ts">
 	import '../app.css';
-	import favicon from '$lib/assets/favicon.svg';
-	import ThemeProvider from '$lib/components/theme/theme-provider.svelte';
+	import favicon from '$lib/assets/favicon.ico';
 	import AppSidebar from '$lib/components/app-sidebar.svelte';
 	import * as Sidebar from '$lib/components/ui/sidebar';
 	import TogleSidebar from '$lib/components/togle-sidebar.svelte';
+	import { ModeWatcher } from 'mode-watcher';
+	import { QueryClientProvider } from '@tanstack/svelte-query';
+	import { queryClient } from '$lib/query';
 
 	let { children, data } = $props();
 </script>
@@ -13,7 +15,8 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<ThemeProvider>
+<QueryClientProvider client={queryClient}>
+	<ModeWatcher />
 	<Sidebar.Provider>
 		<AppSidebar user={data.user} />
 		<main class=" w-full">
@@ -22,4 +25,4 @@
 			{@render children?.()}
 		</main>
 	</Sidebar.Provider>
-</ThemeProvider>
+</QueryClientProvider>

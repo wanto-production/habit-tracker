@@ -15,7 +15,7 @@ export async function handle({ event, resolve }) {
     event.locals.user = session.user;
   }
 
-  if (["/dashboard"].includes(event.url.pathname) && !session?.user) {
+  if (["/dashboard", '/habits'].includes(event.url.pathname) && !session?.user) {
     throw redirect(303, '/auth')
   }
 

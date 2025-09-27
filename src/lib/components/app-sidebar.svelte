@@ -1,19 +1,22 @@
 <script lang="ts">
-	import CalendarIcon from '@lucide/svelte/icons/calendar';
-	import HouseIcon from '@lucide/svelte/icons/house';
-	import SearchIcon from '@lucide/svelte/icons/search';
-	import SettingsIcon from '@lucide/svelte/icons/settings';
+	import {
+		HouseIcon,
+		LayoutDashboardIcon,
+		TrophyIcon,
+		SearchIcon,
+		SettingsIcon
+	} from '@lucide/svelte';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import { page } from '$app/state';
-	import { LayoutDashboardIcon } from 'lucide-svelte';
 	import type { User } from 'better-auth';
 	import { Button } from './ui/button';
 	import { logout } from '$lib/auth-client';
+	import logo from '$lib/assets/favicon.png';
 
 	const items = [
 		{ title: 'Home', url: '/', icon: HouseIcon },
 		{ title: 'Dashboard', url: '/dashboard', icon: LayoutDashboardIcon },
-		{ title: 'Calendar', url: '/calendar', icon: CalendarIcon },
+		{ title: 'Create Habits', url: '/habits', icon: TrophyIcon },
 		{ title: 'Search', url: '/search', icon: SearchIcon },
 		{ title: 'Settings', url: '/settings', icon: SettingsIcon }
 	];
@@ -24,7 +27,10 @@
 
 <Sidebar.Root class="border-r border-sidebar-border bg-sidebar text-sidebar-foreground">
 	<Sidebar.Header>
-		<h1 class=" m-2 text-2xl text-sidebar-foreground">habit tracker</h1>
+		<div class=" m-2 flex items-center gap-2 rounded-md bg-sidebar-primary/50 p-2">
+			<img src={logo} alt="logo" class=" h-auto w-10 rounded-full" />
+			<h1 class=" text-2xl text-sidebar-foreground">habit tracker</h1>
+		</div>
 	</Sidebar.Header>
 	<Sidebar.Content class="py-4">
 		<Sidebar.Group>
