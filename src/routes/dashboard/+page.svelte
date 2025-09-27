@@ -39,7 +39,7 @@
 </script>
 
 {#if $habitsQuery.isPending}
-	<section class="container mx-auto px-4 pt-[60px] pb-8">
+	<section class="container mx-auto px-4 pb-8">
 		<div class="mb-8">
 			<Skeleton class="mb-3 h-8 w-1/4" />
 			<Skeleton class="h-5 w-2/5" />

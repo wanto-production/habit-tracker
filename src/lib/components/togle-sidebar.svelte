@@ -6,7 +6,7 @@
 </script>
 
 <div
-	class="absolute m-3 flex items-center justify-center gap-3 rounded-md bg-sidebar-primary/70 p-1"
+	class="sticky top-3 m-3 flex w-fit items-center justify-center gap-3 rounded-md bg-sidebar-primary/70 p-1"
 >
 	<button class="rounded-md p-2 hover:bg-muted" onclick={() => sidebar.toggle()}>
 		<SidebarIcon size="15" />
